@@ -57,3 +57,14 @@
 ##### As a user, I would like to search for projects .
 ##### As a user, I would like to view projects overall score.
 ##### As a user, I would like to view my profile page.
+
+
+
+
+### Technologies Used
+##### Python
+##### Django
+##### PostgreSQL
+##### HTML5
+##### CSS3
+##### Postman
