@@ -45,3 +45,15 @@
 #### For more information read the following django and python documentation:
   - [DjangoDocumentation](https://docs.djangoproject.com/en/1.11/intro/install/)
   - [PythonDocumentation](https://www.python.org/doc/)
+
+
+
+
+
+### User Stories
+##### As a user, I would like to view posted projects and their details.
+##### As a user, I would like to post a project to be rated and reviewed.
+##### As a user, I would like to rate and  review other users' projects.
+##### As a user, I would like to search for projects .
+##### As a user, I would like to view projects overall score.
+##### As a user, I would like to view my profile page.
