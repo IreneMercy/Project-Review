@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br><br>
+<br><br>
+<div class="container ">
+  <div class="row">
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    {% if projects %}
+      {% for project in projects %}
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2>{{project.author}}</h2>
+              <img class="w-100" src="{{project.image.url}}" alt="projects">
+              <p class="mt-3">{{project.description}}</p>
+              <p>projected {{project.created_date|timesince}} ago</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      {% endif %}
+  </div>
+</div>
+{% endblock %}

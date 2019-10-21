@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+    {% block content %}
+    <hr class="mt-5">
+      <div class="container content-container content">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                  <div class="profile-image">
+                    <img class="profile-image" src="{{ user.profile.image.url }}" alt="img">
+                  </div>
+                  <div class="project-author">
+                    <h5 class="account-header mb-2">{{project.author}}</h5>
+                  </div>
+                  <img  src="{{project.image.url}}" class=" mt-2 w-100" alt="">
+                  <p class="mt-3">{{project.title}}</p>
+                  <p class="mt-3">{{project.description}}</p>
+                  <p class="mt-3">{{project.link}}</p>
+
+                  <p>{{project.created_date|timesince}} ago</p>
+
+                </div>
+
+            </div>
+        </div>
+    {% endblock %}
