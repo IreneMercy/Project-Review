@@ -14,6 +14,8 @@ import os
 import dj_database_url
 import django_heroku
 from decouple import config,Csv
+from dotenv import load_dotenv
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,12 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '($v-m+6%j95f42od0x3ypsf5w#7fbs6kgviu&qp%kq7rw(86zx'
+SECRET_KEY = config('SECRET_KEY')#7fbs6kgviu&qp%kq7rw(86zx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,17 +82,15 @@ WSGI_APPLICATION = 'Projects.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'awards',
-        'USER' : 'joozao',
-        'HOST': '',
-    'PASSWORD': '12345joozao',
-    }
-}
-
-
+DEBUG = config('DEBUG', default=False, cast=bool)
+   DATABASES = {
+       'default': dj_database_url.config(
+           default=config('DATABASE_URL')
+       )
+   }
+db_from_env = dj_database_url.config(conn_max_age=500)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
