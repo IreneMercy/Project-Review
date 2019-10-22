@@ -2,57 +2,58 @@
 {% load static%}
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark blue-gradient">
+    <nav class="navbar navbar-expand-lg aqua-gradient content sticky-top">
 
       <!-- Navbar brand -->
-      <a class="navbar-brand font-weight-bold" href="#">Awwards!</a>
+      <a class="navbar-brand font-weight-bold text-dark text-uppercase" href="/">Awards!</a>
 
       <!-- Collapse button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      <button class="navbar-toggler bg-info text-white" type="button" data-toggle="collapse" data-target="#basicExampleNav"
         aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        Menu
       </button>
 
       <!-- Collapsible content -->
       <div class="collapse navbar-collapse" id="basicExampleNav">
 
         <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+        <ul class="navbar-nav mr-auto text-white">
+          {% if user.is_authenticated %}
+          <li class="nav-item active ml-5">
+            <a class="nav-link text-dark" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-md btn-info" href="{% url 'newproject' %}">SUBMIT PROJECT</a>
-          </li>
+
 
           <!-- Dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <li class="nav-item dropdown ml-2 text-dark">
+            <a class="nav-link dropdown-toggle text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Account</a>
+            <div class="dropdown-menu dropdown-primary text-dark" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-              <a class="dropdown-item" href="#!">Logout</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
             </div>
           </li>
 
+          <li class="nav-item ml-2 ">
+            <a class="nav-link text-dark" href="{% url 'newproject' %}">SUBMIT PROJECT</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
+          </li>
+          {% endif %}
         </ul>
         <!-- Links -->
 
         <form class="form-inline" action="{% url 'search' %}">
           <div class="md-form my-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="post">
+            <input class="form-control mr-sm-2 text-white" type="text" placeholder="Search" aria-label="Search" name="post">
           </div>
         </form>
       </div>
