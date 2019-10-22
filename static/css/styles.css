@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+.content{
+  font-family: 'Lobster', cursive;
+
+}
+.banner{
+  background-image: url(../images/hair.png);
+  height:70vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+}
+.overlaybanner{
+  background-color: black;
+  opacity: 0.95;
+  height:70vh;
+}
