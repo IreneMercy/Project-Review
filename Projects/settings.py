@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'Projects.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DEBUG = config('DEBUG', default=False, cast=bool)
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
+DATABASES = {
+   'default': dj_database_url.config(
+       default=config('DATABASE_URL')
+   )
+}
 db_from_env = dj_database_url.config(conn_max_age=500)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 DATABASES['default'].update(db_from_env)
