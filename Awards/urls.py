@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -14,7 +14,9 @@ urlpatterns = [
     path('project/<id>', views.get_project, name='project'),
     path('search', views.search_projects, name='search'),
     path('api/projects', views.ProjectList.as_view()),
-    path('api/profiles', views.ProfileList.as_view())
+    path('api/profiles', views.ProfileList.as_view()),
+    re_path(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
+
 
 
 
