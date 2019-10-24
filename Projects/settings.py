@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'rest_framework',
     'crispy_forms',
+    'star_ratings',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,5 +141,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL =  'home'
 LOGIN_URL = 'login'
-
+STAR_RATINGS_RERATE = False
+STAR_RATINGS_RANGE = 10
 django_heroku.settings(locals())
