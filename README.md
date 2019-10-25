@@ -58,6 +58,11 @@
 ##### As a user, I would like to view projects overall score.
 ##### As a user, I would like to view my profile page.
 
+### Behavior Driven Development
+#### Given that a user has logged  in successfully, then they should be able to see other peoples projects and review them, they can also post their own projects to be reviewed.
+#### Given that a user has logged in, then they should be able to search for different projects.
+#### Given that a user is logged in, then they should be able to view projects overall score .
+#### Given that a user is logged in and updated their profile, then they should be able to  view their profile.
 
 
 
