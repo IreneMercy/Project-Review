@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Concert+One&display=swap');
 
 .content{
-  font-family: 'Lobster', cursive;
-
+  font-family: 'Concert One', cursive;
 }
 .banner{
   background-image: url(../images/hair.png);
@@ -19,5 +18,5 @@
   height:70vh;
 }
 .award{
-  font-size:40px;
+  font-size:50px;
 }
