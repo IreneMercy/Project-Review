@@ -24,7 +24,7 @@
 ##### Git clone the project on your current directory by:
   - ```git clone https://github.com/IreneMercy/Project-Review.git```.
 ##### Move to your project directory:
-- ```cd Instapic```.
+- ```cd Project-Review```.
 ##### Open the project on your terminal:
   - ```atom . or code .``` , according to the type of your text editor.
 ##### Install virtual environment using python:
